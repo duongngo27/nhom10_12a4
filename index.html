@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặc sản Dừa Bến Tre</title>
+    <style>
+        /* ===== Reset ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8fff5;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* ===== Dark Mode ===== */
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #eee;
+        }
+
+        /* ===== Header ===== */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: linear-gradient(90deg, #00a859, #006400);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            width: 120px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* ===== Nút Dark Mode ===== */
+        .dark-mode-toggle {
+            cursor: pointer;
+            background: #ffd700;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: background 0.3s;
+        }
+
+        .dark-mode-toggle:hover {
+            background: #ffcc00;
+        }
+
+        /* ===== Thanh tìm kiếm ===== */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 20px;
+            padding: 5px 10px;
+            margin-left: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            padding: 5px;
+            font-size: 16px;
+            border-radius: 20px;
+            width: 250px;
+            transition: width 0.3s;
+        }
+
+        .search-bar input:focus {
+            width: 300px;
+        }
+
+        .search-bar button {
+            background-color: transparent;
+            border: none;
+            font-size: 18px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* ===== Nội dung chính ===== */
+        .main-content {
+            text-align: center;
+            padding: 40px 20px;
+            background: url('background.jpg') no-repeat center/cover;
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* ===== Danh sách sản phẩm ===== */
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product-item {
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s, box-shadow 0.4s;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .product-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .product-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-item p {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #006400;
+        }
+
+        /* ===== Nút Lên Đầu Trang ===== */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #00a859;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            transition: background 0.3s;
+        }
+
+        #back-to-top:hover {
+            background: #006400;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background: #006400;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        /* ===== Chatbot ===== */
+        .chatbot {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #00a859;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        /* ===== Giỏ Hàng Mini ===== */
+        .mini-cart {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 10px;
+            display: none;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 1024px) {
+            .product-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                flex-direction: column;
+                background: #006400;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 200px;
+                padding: 10px;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        /* ===== Hiệu ứng xuất hiện ===== */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== Header ===== -->
+    <header>
+        <img src="logo.png" alt="Logo" class="logo">
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav>
+            <a href="index.html">Trang chủ</a>
+            <a href="nap3.html">Giới thiệu</a>
+            <a href="lichsu.html">Lịch sử</a>
+            <a href="lienhe.html">Liên hệ</a>
+        </nav>
+
+        <!-- Thanh tìm kiếm -->
+        <div class="search-bar">
+            <input type="text" placeholder="Tìm kiếm sản phẩm...">
+            <button>🔍</button>
+        </div>
+
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+    </header>
+
+    <!-- ===== Nội dung chính ===== -->
+    <div class="main-content">Đặc sản Dừa Bến Tre</div>
+
+    <!-- ===== Danh sách sản phẩm ===== -->
+    <div class="product-list">
+        <div class="product-item">
+            <a href="sp1.html">
+                <img src="https://tinhdauhoanen.com/wp-content/uploads/2020/08/2020-06-18-17.16.10_2-683x1024.jpg" alt="Dừa 1">
+                <p>Dừa Xiêm Xanh</p>
+            </a>
+        </div>
+        <div class="product-item">
+            <a href="sp2.html">
+                <img src="coconut2.jpg" alt="Dừa 2">
+                <p>Dừa Dứa</p>
+            </a>
+        </div>
+        <div class="product-item">
+            <a href="sp3.html">
+                <img src="coconut3.jpg" alt="Dừa 3">
+                <p>Dừa Khô</p>
+            </a>
+        </div>
+        <div class="product-item">
+            <a href="sp4.html">
+                <img src="coconut4.jpg" alt="Dừa 4">
+                <p>Nước Dừa Tươi</p>
+            </a>
+        </div>
+        <div class="product-item">
+            <a href="sp5.html">
+                <img src="coconut5.jpg" alt="Dừa 5">
+                <p>Dừa Xiêm Xanh</p>
+            </a>
+        </div>
+        <div class="product-item">
+            <a href="sp6.html">
+                <img src="coconut6.jpg" alt="Dừa 6">
+                <p>Dừa Dứa</p>
+            </a>
+        </div>
+        <div class="product-item">
+            <a href="sp7.html">
+                <img src="coconut7.jpg" alt="Dừa 7">
+                <p>Dừa Khô</p>
+            </a>
+        </div>
+        <div class="product-item">
+            <a href="sp8.html">
+                <img src="coconut8.jpg" alt="Dừa 8">
+                <p>Nước Dừa Tươi</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+        <p>&copy; 2025 Đặc sản Dừa Bến Tre.</p>
+        <p>Liên hệ: <a href="mailto:contact@duabentre.vn">contact@duabentre.vn</a></p>
+    </footer>
+
+    <script>
+        // Toggle Menu
+        function toggleMenu() {
+            document.querySelector('nav').classList.toggle('active');
+        }
+
+        // Toggle Dark Mode
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ - Dừa Bến Tre</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8fff5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #00a859;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin: 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Thanh Menu */
+        nav {
+            background-color: #006400;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 15px;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #004d26;
+            color: #ffcc00;
+        }
+
+        /* Nội dung chính */
+        .content {
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .content h2 {
+            font-size: 36px;
+            color: #006400;
+            margin-bottom: 20px;
+            text-transform: capitalize;
+        }
+
+        .contact-info {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .contact-form button {
+            background-color: #00a859;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #006400;
+        }
+
+        /* Chuyển động */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Đưa các yếu tố vào một số hiệu ứng động */
+        .section p, .section h2 {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Liên Hệ với Dừa Bến Tre</h1>
+    </header>
+
+    <!-- Thanh Menu -->
+    <nav>
+        <a href="index.html">Trang Chủ</a>
+        <a href="products.html">Sản Phẩm</a>
+        <a href="applications.html">Ứng Dụng</a>
+        <a href="contact.html">Liên Hệ</a>
+    </nav>
+
+    <!-- Nội dung chính -->
+    <div class="content">
+
+        <!-- Thông tin liên hệ -->
+        <div class="contact-info">
+            <h2>Thông Tin Liên Hệ</h2>
+            <p><strong>Địa chỉ:</strong> 123 Dừa, Bến Tre, Việt Nam</p>
+            <p><strong>Số điện thoại:</strong> +84 123 456 789</p>
+            <p><strong>Email:</strong> info@duba.com.vn</p>
+            <p><strong>Giờ làm việc:</strong> Thứ Hai - Thứ Sáu, 8:00 AM - 5:00 PM</p>
+        </div>
+
+        <!-- Biểu mẫu liên hệ -->
+        <div class="contact-form">
+            <h2>Gửi thông tin liên hệ</h2>
+            <form action="submit_contact.php" method="POST">
+                <input type="text" name="name" placeholder="Họ và tên" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Lời nhắn của bạn..." rows="4" required></textarea>
+                <button type="submit">Gửi Thông Tin</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Dừa Bến Tre - Tất cả quyền lợi được bảo lưu</p>
+    </footer>
+
+</body>
+</html>
