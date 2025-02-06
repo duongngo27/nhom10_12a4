@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu Các Loại Dừa</title>
+    <style>
+        /* ===== Reset CSS ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #00c853, #006400);
+            color: white;
+            text-align: center;
+        }
+
+        /* ===== Container chính ===== */
+        .container {
+            width: 90%;
+            margin: 50px auto;
+        }
+
+        .container h1 {
+            font-size: 48px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            background: linear-gradient(to right, #ffea00, #ff9800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* ===== Bố cục các loại dừa ===== */
+        .coconut-list {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .coconut-item {
+            background: rgba(255, 255, 255, 0.1);
+            width: 23%;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .coconut-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .coconut-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .coconut-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .coconut-item h2 {
+            font-size: 22px;
+            color: #ffea00;
+            margin: 15px 0 10px;
+            text-transform: uppercase;
+        }
+
+        .coconut-item p {
+            font-size: 16px;
+            color: #fff;
+            line-height: 1.5;
+        }
+
+        /* ===== Phần đặc điểm ===== */
+        .features, .uses {
+            text-align: left;
+            margin-top: 10px;
+            display: none;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .features li, .uses li {
+            list-style-type: disc;
+            margin-left: 20px;
+            font-size: 14px;
+            color: #ffea00;
+        }
+
+        .read-more {
+            background: #ffea00;
+            color: black;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .read-more:hover {
+            background: #ffcc00;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 1024px) {
+            .coconut-item {
+                width: 48%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .coconut-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            .coconut-item {
+                width: 90%;
+            }
+        }
+
+        /* ===== Hiệu ứng chữ xuất hiện ===== */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <script>
+        function toggleFeatures(id) {
+            const element = document.getElementById(id);
+            if (element.style.display === "block") {
+                element.style.display = "none";
+            } else {
+                element.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Giới Thiệu Các Loại Dừa</h1>
+        <div class="coconut-list">
+            <!-- Dừa Xiêm Xanh -->
+            <div class="coconut-item">
+                <img src="duata.jpg" alt="Dừa Xiêm Xanh">
+                <h2>Dừa Xiêm Xanh</h2>
+                <p>Dừa xiêm là giống dừa phổ biến nhất ở Bến Tre , chủ yếu dùng để lấy nước giải khát .</p>
+                <button class="read-more" onclick="toggleFeatures('features1')">Xem Đặc Điểm</button>
+                <ul class="features" id="features1">
+                    <li>Trái nhỏ, vỏ mỏng, nước ngọt</li>
+                    <li>Thích hợp để uống tươi</li>
+                    <li>Chứa nhiều khoáng chất tự nhiên</li>
+                </ul>
+                <button class="read-more" onclick="toggleFeatures('uses1')">Xem Công Dụng</button>
+                <ul class="uses" id="uses1">
+                    <li>Cung cấp nước giải khát tự nhiên</li>
+                    <li>Giúp thanh nhiệt và làm mát cơ thể</li>
+                    <li>Hỗ trợ cải thiện tiêu hóa</li>
+                </ul>
+            </div>
+
+            <!-- Dừa Dứa -->
+            <div class="coconut-item">
+                <img src="duadua.jpg" alt="Dừa Dứa">
+                <h2>Dừa Dứa</h2>
+                <p>Đây là loại dừa giống nhỏ, nhiều trái. Da quả màu xanh giống dừa xiêm nhưng khác là nước và cơm dừa có mùi thơm của dứa, mùa nắng thơm hơn, nước cũng ngọt hơn. Nước dừa ngọt và mát. Tại Việt Nam, dừa được trồng ở một số vùng đồng bằng sông Cửu Long, đặc biệt là ở Bến Tre.</p>
+                <button class="read-more" onclick="toggleFeatures('features2')">Xem Đặc Điểm</button>
+                <ul class="features" id="features2">
+                    <li>Mùi thơm đặc trưng như lá dứa</li>
+                    <li>Thích hợp để làm nước giải khát</li>
+                    <li>Hàm lượng dinh dưỡng cao</li>
+                </ul>
+                <button class="read-more" onclick="toggleFeatures('uses2')">Xem Công Dụng</button>
+                <ul class="uses" id="uses2">
+                    <li>Chế biến thành nước uống bổ dưỡng</li>
+                    <li>Giúp làm đẹp da, chống lão hóa</li>
+                    <li>Giảm căng thẳng và mệt mỏi</li>
+                </ul>
+            </div>
+
+            <!-- Dừa Ta(Dừa Khô) -->
+            <div class="coconut-item">
+                <img src="dauxiem.jpg" alt="Dừa Ta(Dừa Khô">
+                <h2>Dừa Ta(Dừa Khô)</h2>
+                <p>Là tất cả những loại dừa đã già, vỏ thường đổi màu sang màu nâu nhạt</p>
+                <button class="read-more" onclick="toggleFeatures('features3')">Xem Đặc Điểm</button>
+                <ul class="features" id="features3">
+                    <li>Dùng để làm dầu dừa, nước cốt dừa</li>
+                    <li>Cùi dừa dày, giàu chất béo</li>
+                    <li>Thời gian bảo quản lâu</li>
+                </ul>
+                <button class="read-more" onclick="toggleFeatures('uses3')">Xem Công Dụng</button>
+                <ul class="uses" id="uses3">
+                    <li>Dùng để chế biến các món ăn</li>
+                    <li>Làm nguyên liệu cho sản phẩm chăm sóc da</li>
+                    <li>Dùng trong ngành công nghiệp làm mỹ phẩm</li>
+                </ul>
+            </div>
+
+            <!-- Dừa Lửa -->
+            <div class="coconut-item">
+                <img src="dualua.jpg" alt="Dừa Lửa">
+                <h2>Dừa Lửa</h2>
+                <p>Dừa lửa hay còn gọi là dừa Xiêm đỏ hiện là một loại dừa Xiêm được người dân trồng dừa trên cả nước rất ưa chuộng do có ưu điểm rất sai trái, những trái dừa san sát nhau như sâu chuỗi, vị ngọt. Bên cạnh đó dừa Xiêm đỏ có thời gian thu hoạch chỉ bằng một nửa của dừa ta.
+</p>
+                <button class="read-more" onclick="toggleFeatures('features4')">Xem Đặc Điểm</button>
+                <ul class="features" id="features4">
+                    <li>Giải khát, làm mát cơ thể</li>
+                    <li>Vỏ có màu vàng cam hoặc đỏ, quả nhỏ, nước ngọt đậm.</li>
+                    <li>Quả nhỏ, nước ngọt đậm.</li>
+                </ul>
+                <button class="read-more" onclick="toggleFeatures('uses4')">Xem Công Dụng</button>
+                <ul class="uses" id="uses4">
+                    <li>Tăng cường hệ miễn dịch</li>
+                    <li>Cung cấp năng lượng tự nhiên</li>
+                    <li>Dùng để uống nước, trang trí cảnh quan.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
