@@ -7,7 +7,6 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f8fff5;
             margin: 0;
             padding: 0;
             color: #333;
@@ -75,13 +74,26 @@
             margin-bottom: 40px;
         }
 
+        .contact-form {
+            width: 60%; /* Điều chỉnh độ rộng của form */
+            margin: 0 auto; /* Căn giữa form */
+            text-align: left; /* Canh trái nội dung trong form */
+        }
+
+        .contact-form label {
+            display: block; /* Đặt label trên mỗi dòng */
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
         .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 15px;
+            width: calc(100% - 12px); /* trừ padding và border */
+            padding: 10px;
             border: 1px solid #ccc;
-            border-radius: 10px;
+            border-radius: 5px;
             margin-bottom: 15px;
             font-size: 16px;
+            box-sizing: border-box; /* bao gồm padding và border vào width */
         }
 
         .contact-form button {
@@ -105,56 +117,60 @@
             100% { opacity: 1; }
         }
 
-        /* Đưa các yếu tố vào một số hiệu ứng động */
-        .section p, .section h2 {
-            animation: fadeIn 2s ease-in-out;
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            color: #333;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
-
     </style>
 </head>
 <body>
 
-    <!-- Header -->
     <header>
         <h1>Liên Hệ với Dừa Bến Tre</h1>
     </header>
 
-    <!-- Thanh Menu -->
     <nav>
-        <a href="index.html">Trang Chủ</a>
-        <a href="products.html">Sản Phẩm</a>
-        <a href="applications.html">Ứng Dụng</a>
-        <a href="contact.html">Liên Hệ</a>
+        <a href="index.html">Trang chủ</a>
+        <a href="ungdung.html">Ứng dụng</a>
+        <a href="gioithieu.html">Giới thiệu</a>
+        <a href="dua.html">Dừa</a>
+        <a href="lienhe.html">Liên hệ</a>
     </nav>
 
-    <!-- Nội dung chính -->
     <div class="content">
 
-        <!-- Thông tin liên hệ -->
         <div class="contact-info">
             <h2>Thông Tin Liên Hệ</h2>
-            <p><strong>Địa chỉ:</strong> 123 Dừa, Bến Tre, Việt Nam</p>
-            <p><strong>Số điện thoại:</strong> +84 123 456 789</p>
-            <p><strong>Email:</strong> info@duba.com.vn</p>
+            
+
             <p><strong>Giờ làm việc:</strong> Thứ Hai - Thứ Sáu, 8:00 AM - 5:00 PM</p>
         </div>
 
-        <!-- Biểu mẫu liên hệ -->
         <div class="contact-form">
-            <h2>Gửi thông tin liên hệ</h2>
-            <form action="submit_contact.php" method="POST">
-                <input type="text" name="name" placeholder="Họ và tên" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <textarea name="message" placeholder="Lời nhắn của bạn..." rows="4" required></textarea>
-                <button type="submit">Gửi Thông Tin</button>
+            <h2>Gửi tin nhắn cho chúng tôi</h2>
+            <form action="#" method="post">  <label for="name">Họ và Tên:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Tin nhắn:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Gửi</button>
             </form>
         </div>
 
     </div>
 
-    <!-- Footer -->
     <footer>
-        <p>© 2025 Dừa Bến Tre - Tất cả quyền lợi được bảo lưu</p>
+        
     </footer>
 
 </body>

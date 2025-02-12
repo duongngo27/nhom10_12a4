@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dừa Bến Tre - Sản Phẩm</title>
+    <style>
+        /* ===== Reset CSS ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f8f8f8;
+            color: #333;
+        }
+
+        /* ===== Menu đẹp hơn ===== */
+        .menu {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #008000;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .menu .logo {
+            font-size: 22px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .menu .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .menu .nav {
+            display: flex;
+            gap: 20px;
+            margin-left: auto;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .menu a:hover {
+            background: #006400;
+        }
+
+        /* Thanh tìm kiếm */
+        .search-bar {
+            margin-left: 20px;
+        }
+
+        .search-bar input {
+            padding: 7px 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        /* ===== Container chính ===== */
+        .container {
+            width: 90%;
+            margin: 100px auto 20px;
+            text-align: center;
+        }
+
+        .container h1 {
+            font-size: 36px;
+            color: #008000;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        /* ===== Bố cục sản phẩm ===== */
+        .coconut-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .coconut-item {
+            width: 22%;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .coconut-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .coconut-item:hover {
+            transform: scale(1.05);
+        }
+
+        .coconut-item h2 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #008000;
+        }
+
+        /* ===== Nút "Đặc điểm" đẹp hơn ===== */
+        .read-more {
+            background: #008000;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+            margin-top: 10px;
+        }
+
+        .read-more:hover {
+            background: #006400;
+            transform: scale(1.1);
+        }
+
+        /* ===== Nội dung ẩn (đặc điểm) ===== */
+        .features {
+            text-align: left;
+            margin-top: 10px;
+            display: none;
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .features li {
+            list-style-type: disc;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 1024px) {
+            .coconut-item {
+                width: 48%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                flex-direction: column;
+                padding: 10px;
+            }
+            .menu .nav {
+                margin-top: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .search-bar {
+                margin-top: 10px;
+            }
+            .coconut-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            .coconut-item {
+                width: 90%;
+            }
+        }
+    </style>
+    <script>
+        function toggleFeatures(id) {
+            const element = document.getElementById(id);
+            element.style.display = element.style.display === "block" ? "none" : "block";
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Menu -->
+    <div class="menu">
+        <div class="logo">
+
+            Dừa Bến Tre
+        </div>
+        <div class="nav">
+            <a href="index.html">Trang Chủ</a>
+            <a href="lichsu.htm">Lịch sử</a></a>
+            <a href"gioithieu.html">Giới thiệu</a>
+            <a href="ungdung.html">Ứng dụng</a>
+            <a hreh"lienhe.html">Liên Hệ</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Tìm kiếm...">
+        </div>
+    </div>
+
+    <!-- Nội dung chính -->
+    <div class="container">
+        <h1>Danh Sách Sản Phẩm</h1>
+        <div class="coconut-list">
+            <!-- 2 sản phẩm có nút "Đặc điểm" -->
+            <div class="coconut-item">
+                <img src="https://nongtraixanh.shop/wp-content/uploads/2021/10/dua-xiem-xanh-got-troc-ben-tre-1-800x800.jpg " alt="Dừa Xiêm Xanh">
+                <h2>Dừa Xiêm Xanh</h2>
+                <button class="read-more" onclick="toggleFeatures('features1')">Đặc điểm</button>
+                <ul class="features" id="features1">
+                    <li>Trái nhỏ, vỏ mỏng, nước ngọt</li>
+                    <li>Thích hợp uống tươi</li>
+                </ul>
+            </div>
+
+            <div class="coconut-item">
+                <img src="https://dua.vn/wp-content/uploads/2023/08/dua-dua-ben-tre-e1737622064501.jpg " alt="Dừa Dứa">
+                <h2>Dừa Dứa</h2>
+                <button class="read-more" onclick="toggleFeatures('features2')">Đặc điểm</button>
+                <ul class="features" id="features2">
+                    <li>Mùi thơm lá dứa</li>
+                    <li>Nước có vị đặc biệt</li>
+                </ul>
+            </div>
+
+            <!-- Thêm 8 sản phẩm mới -->
+            <div class="coconut-item">
+                <img src="https://caygiongcaimonbentre.com/upload/sanpham/cay_dua_xiem_dua-9620.jpg " alt="Dừa Táo">
+                <h2>Dừa Xiêm lùn</h2>
+                <button class="read-more" onclick="toggleFeatures('features3')">Đặc điểm</button>
+                <ul class="features" id="features3">
+                    <li>Trái có hình dạng giống quả táo</li>
+                    <li>Nước ngọt, cơm dừa mềm</li>
+                </ul>
+            </div>
+
+            <div class="coconut-item">
+                <img src="https://cdn.tgdd.vn/Files/2021/08/10/1374247/dua-sap-la-gi-ma-gia-cuc-dat-nhung-cach-che-bien-dua-sap-ngon-202206011326521902.jpg " alt="Dừa Sáp">
+                <h2>Dừa Sáp</h2>
+                <button class="read-more" onclick="toggleFeatures('features4')">Đặc điểm</button>
+                <ul class="features" id="features4">
+                    <li>Cơm dừa đặc, dẻo như sáp</li>
+                    <li>Hiếm và có giá trị cao</li>
+                </ul>
+            </div>
+
+            <div class="coconut-item">
+                <img src="https://hocviennongnghiep.com/wp-content/uploads/2018/01/edualua.jpg  " alt="Dừa Lửa">
+                <h2>Dừa Lửa</h2>
+                <button class="read-more" onclick="toggleFeatures('features5')">Đặc điểm</button>
+                <ul class="features" id="features5">
+                    <li>Vỏ màu đỏ như lửa</li>
+                    <li>Nước ngọt, cơm dừa thơm</li>
+                </ul>
+            </div>
+
+            <div class="coconut-item">
+                <img src="https://aloduasap.com/wp-content/uploads/2019/11/dua-dau.jpg " alt="Dừa dâu">
+                <h2>Dừa Dâu</h2>
+                <button class="read-more" onclick="toggleFeatures('features6')">Đặc điểm</button>
+                <ul class="features" id="features6">
+                    <li>Kết hợp giữa dừa xiêm và dừa lửa</li>
+                    <li>Nước ngọt, vỏ đỏ đặc trưng</li>
+                </ul>
+            </div>
+
+            <div class="coconut-item">
+                <img src="https://caygiongphucan.com/wp-content/uploads/2024/06/dua-tam-quan-cay-lon.jpg " alt="Dừa Tam Quan">
+                <h2>Dừa Tam Quan</h2>
+                <button class="read-more" onclick="toggleFeatures('features7')">Đặc điểm</button>
+                <ul class="features" id="features7">
+                    <li>Trái to, nước nhiều</li>
+                    <li>Thích hợp để làm dừa khô</li>
+                </ul>
+            </div>
+
+            <div class="coconut-item">
+                <img src="https://caygionguthien.vn/wp-content/uploads/2022/03/ma-lai-chu-4.jpg 
+               " alt="Dừa Búng Bình">
+                <h2>Dừa Mã Lai</h2>
+                <button class="read-more" onclick="toggleFeatures('features8')">Đặc điểm</button>
+                <ul class="features" id="features8">
+                    <li>Trái nhỏ, nước ngọt</li>
+                    <li>Thích hợp để uống tươi</li>
+                </ul>
+            </div>
+
+            <div class="coconut-item">
+                <img src="https://caygiong.tiendatbanme.com/wp-content/uploads/2024/09/giong_dua_xiem_day_dua_eo_dua_xiem_eo_dua_dun.jpg " alt="Dừa Cao Phong">
+                <h2>Dừa Ẻo</h2>
+                <button class="read-more" onclick="toggleFeatures('features9')">Đặc điểm</button>
+                <ul class="features" id="features9">
+                    <li>Trái nhiều, cơm dừa dày</li>
+                    <li>Thích hợp để làm dừa khô và dầu dừa</li>
+                </ul>
+            </div>
+
+            <div class="coconut-item">
+                <img src="https://giongcamau.vn/uploads/shops/2023_02/dua-ta-cay-va-trai.jpg" alt="Dừa Tượng">
+                <h2>Dừa ta</h2>
+                <button class="read-more" onclick="toggleFeatures('features10')">Đặc điểm</button>
+                <ul class="features" id="features10">
+                    <li>Trái vừa, cơm dừa mềm</li>
+                    <li>Thường dùng để kho thịt và dầu dừa</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

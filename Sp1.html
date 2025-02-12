@@ -163,10 +163,6 @@
     margin-top: 15px;
 }
 
-..share-buttons {
-    margin-top: 15px;
-}
-
 .share-buttons button {
     background: #0073e6;
     color: white;
@@ -196,7 +192,6 @@
     background-color: #cc5200;
 } 
     </style>
-   
 </head>
 <body>
 
@@ -216,16 +211,15 @@
 
     <!-- Product Detail -->
     <div class="product-container">
-        <img src="https://duatamviet.com/wp-content/uploads/2023/02/chengao.png " alt="Dừa Xiêm Xanh">
+        <img src="https://dua.vn/wp-content/uploads/2023/10/shopee-son-duong-moi-1.png " alt="Dừa Xiêm Xanh">
         
         <div class="product-info">
-            <h2>Chén gáo dừa</h2>
-            <p><strong>Giá:</strong> 50,000 VND</p>
+            <h2>Son dưỡng môi </h2>
+            <p><strong>Giá:</strong> 70,000 VND</p>
             
             <!-- Giỏ hàng -->
             <div class="cart-container">
                 <button class="quantity-btn" onclick="changeQuantity(-1)">-</button>
-    
                 <input type="number" class="quantity-input" id="quantity" value="1" min="1">
                 <button class="quantity-btn" onclick="changeQuantity(1)">+</button>
                 <button class="add-to-cart-btn" onclick="addToCart()">Thêm vào giỏ hàng</button>
@@ -250,7 +244,6 @@
 
     <!-- Footer -->
     <div class="footer">
-
     </div>
 
     <script>
@@ -279,33 +272,7 @@
             document.getElementById("commentSection").appendChild(newComment);
             document.getElementById("commentText").value = "";
         }
-        document.addEventListener("DOMContentLoaded", function () {
-    let productUrl = window.location.href;
-    let productName = document.querySelector(".product-info h2").innerText;
-
-    document.getElementById("share-facebook").addEventListener("click", function (event) {
-        event.preventDefault();
-        let fbUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(productUrl)}`;
-        if (confirm("Bạn có muốn chia sẻ lên Facebook không? Bạn cần đăng nhập để chia sẻ.")) {
-            window.open(fbUrl, "_blank");
-        }
-    });
-
-    document.getElementById("share-twitter").addEventListener("click", function (event) {
-        event.preventDefault();
-        let twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(productName)}&url=${encodeURIComponent(productUrl)}`;
-        window.open(twitterUrl, "_blank");
-    });
-
-    document.getElementById("share-zalo").addEventListener("click", function (event) {
-        event.preventDefault();
-        let zaloUrl = `https://zalo.me/share?url=${encodeURIComponent(productUrl)}`;
-        if (confirm("Bạn có muốn chia sẻ lên Zalo không? Bạn cần đăng nhập để chia sẻ.")) {
-            window.open(zaloUrl, "_blank");
-        }
-    });
-});
-function loginAndShare(platform) {
+        function loginAndShare(platform) {
     let loginUrl = "";
     let shareUrl = "";
     let productUrl = encodeURIComponent(window.location.href);
@@ -314,7 +281,6 @@ function loginAndShare(platform) {
         loginUrl = "https://www.facebook.com/login.php";
         shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${productUrl}`;
     } 
-
     // Mở trang đăng nhập
     let loginWindow = window.open(loginUrl, "_blank", "width=500,height=600");
 
@@ -325,7 +291,7 @@ function loginAndShare(platform) {
 }
 function buyNow() {
     let quantity = document.getElementById("quantity").value;
-    let price = 50000; // Giá sản phẩm (đơn vị: VND)
+    let price = 70000; // Giá sản phẩm (đơn vị: VND)
     let total = quantity * price;
     
     let confirmPurchase = confirm(`Bạn có chắc muốn mua ${quantity} sản phẩm với tổng giá ${total.toLocaleString()} VND không?`);
@@ -336,12 +302,10 @@ function buyNow() {
     }
 }
     </script>
-<!-- Chia sẻ lên mạng xã hội -->
+    <!-- Chia sẻ lên mạng xã hội -->
 <div class="share-buttons">
     <p><strong>Chia sẻ:</strong></p>
     <button onclick="loginAndShare('facebook')">Đăng nhập & Chia sẻ Facebook</button>
-
-</div>
-</div
+    
 </body>
 </html>
